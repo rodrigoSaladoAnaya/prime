@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <title>Prime</title>
   <script src="index.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Itim&family=Raleway:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Itim&family=Major+Mono+Display&family=Raleway:wght@300&family=VT323&display=swap" rel="stylesheet">
+
   <style>
     html, body {
       display: flex;
@@ -22,10 +23,10 @@
       text-decoration: none;
       font-family: 'Itim', cursive;
       font-size: 18px;
-      color: #8470ff;
+      color: #e59400;
     }
     #verify:hover {
-      color: #6959cc;
+      color: #e5c100;
     }
     #container {
       margin-top: 20px;
@@ -38,16 +39,56 @@
       margin: 10px;
     }
     #label {
-      font-size: 24px;
+      font-size: 32px;
     }
     #number {
-      width: 280px;
+      width: 300px;
       padding: 5px;
       font-size: 18px;
     }
-    #goCheck {
-      width: 300px;
+    button {
+      width: 320px;
       padding: 5px;
+      font-size: 18px;
+      color: #000;
+    }
+    #waning {
+      margin: 3px;
+      font-size: 12px;
+      color: #999;
+    }
+
+    #sieve {
+      width: 90vw;
+      padding: 10px;
+      margin: 10px;
+      font-family: 'Major Mono Display', monospace;
+      font-size: 12px;
+    }
+    .node {
+      display: flex;
+      justify-content: flex-start;
+      border-radius: 1px;
+      margin: 5px;
+    }
+    .is-prime {
+      color: #ffa500;
+    }
+    .is-odd-composite {
+      color: #919293;
+    }
+    .index {
+      width: 70px;
+      min-width: 70px;
+    }
+    .leaf {
+      width: 40px;
+      min-width: 40px;
+      color: #b6cb94;
+    }
+    .point {
+      color: #0000ff;
+      font-family: 'VT323', monospace;
       font-size: 18px;
     }
   </style>
@@ -56,8 +97,12 @@
 
   <div id="container">
     <div id="label">Is prime number?</div>
+    <div id="waning">
+      Just numbers greater or equals than 9 and use the explain option with care with big numbers.
+    </div>
     <input id="number" type="text" autofocus>
     <button id="goCheck" type="button" onclick="onClickCheck()">Check</button>
+    <button id="goExplain" type="button" onclick="onClickExplain()">Explain it with a sieve.</button>
     <div>
       <a id="verify" class="check" target="_blank"></a>
     </div>

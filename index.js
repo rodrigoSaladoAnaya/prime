@@ -34,19 +34,45 @@ function onClickCheck() {
   input.focus();
 }
 
-window.onload = function() {
+function getTree(N) {
+  const tree = [];
+  const L = Math.ceil(N / 6) - 1;
+  for(let i = 0; i < L; i++) {
+    const B = (i * 4) + 6;
+    const Q = (N / B) % 0.5;
+    const j = Math.floor(N / B) - 1;
+    const F = (2 * i + 3) * (2 * j + 3);
+    if(Q == 0 && F == N) {
+      tree.push(i);
+    } else {
+      tree.push('.');
+    }
+  }
+  return tree;
+}
 
-
-
-  // const container = document.querySelector('#container');
-  // for(let N = 9; N < 1000; N+=2) {
-  //   const R = isPrime(N);
-  //   const div = document.createElement('div');
-  //   if(R) {
-  //     div.innerHTML = `<div class="restuls"><div class="number prime">${N}</div><a class="check" href="https://www.wolframalpha.com/input/?i=${N}+is+prime+number" target="_blank">check it up</a></div>`;
-  //   } else {
-  //     div.innerHTML = `<div class="restuls"><div class="number odd-composite">${N}</div></div>`;
-  //   }
-  //   container.append(div);
-  // }
+function onClickExplain() {
+  const sieve = document.querySelector('#sieve');
+  const number = document.querySelector('#number').value;
+  for(let i = 9; i <= number; i+=2) {
+    const tree = getTree(i);
+    const isPrime = tree.every(n => n == '.');
+    const node = document.createElement('div');
+    node.classList.add('node');
+    const index = document.createElement('div');
+    index.classList.add('index');
+    index.innerHTML = `${i}`;
+    index.classList.add(isPrime? 'is-prime' : 'is-odd-composite');
+    node.append(index);
+    tree.forEach((item, i) => {
+      const leaf = document.createElement('div');
+      leaf.classList.add('leaf');
+      leaf.innerHTML = `${item}`;
+      if(item != '.') {
+        leaf.classList.add('point');
+      }
+      node.append(leaf);
+    });
+    sieve.append(node);
+  }
 }
