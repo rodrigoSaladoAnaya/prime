@@ -3,18 +3,58 @@
 <head>
   <meta charset="utf-8">
   <title>Prime</title>
+  <script src="index.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
   <style>
     html, body {
-      display: block;
+      display: flex;
+      flex-flow: column;
+      align-items: center;
       padding: 0;
       margin: 0;
       width: 100vw;
       height: 100vh;
       background-color: #f7f7f7;
+      font-family: 'Raleway', sans-serif;
+    }
+    #verify {
+      display: none;
+    }
+    #container {
+      margin-top: 20px;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+    }
+    #container > * {
+      margin: 10px;
+    }
+    #label {
+      font-size: 24px;
+    }
+    #number {
+      width: 280px;
+      padding: 5px;
+      font-size: 18px;
+    }
+    #goCheck {
+      width: 300px;
+      padding: 5px;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
+
+  <div id="container">
+    <div id="label">Is prime number?</div>
+    <input id="number" type="text" autofocus>
+    <button id="goCheck" type="button" onclick="onClickCheck()">Check</button>
+    <div>
+      <a id="verify" class="check" target="_blank"></a>
+    </div>
+  </div>
 
 </body>
 </html>
