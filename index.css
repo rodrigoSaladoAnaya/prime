@@ -1,0 +1,84 @@
+html, body {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f7f7f7;
+  font-family: 'Raleway', sans-serif;
+}
+#verify {
+  display: none;
+  text-decoration: none;
+  font-family: 'Itim', cursive;
+  font-size: 18px;
+  color: #e59400;
+}
+#verify:hover {
+  color: #e5c100;
+}
+#container {
+  margin-top: 20px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+#container > * {
+  margin: 10px;
+}
+#label {
+  font-size: 32px;
+}
+#number {
+  width: 300px;
+  padding: 5px;
+  font-size: 18px;
+}
+button {
+  width: 320px;
+  padding: 5px;
+  font-size: 18px;
+  color: #000;
+}
+#waning {
+  margin: 3px;
+  font-size: 12px;
+  color: #999;
+}
+
+#sieve {
+  width: 90vw;
+  padding: 10px;
+  margin: 10px;
+  font-family: 'Major Mono Display', monospace;
+  font-size: 12px;
+}
+.node {
+  display: flex;
+  justify-content: flex-start;
+  border-radius: 1px;
+  margin: 5px;
+}
+.is-prime {
+  color: #ffa500;
+}
+.is-odd-composite {
+  color: #919293;
+}
+.index {
+  width: 70px;
+  min-width: 70px;
+}
+.leaf {
+  width: 40px;
+  min-width: 40px;
+  color: #b6cb94;
+}
+.point {
+  color: #0000ff;
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+}
