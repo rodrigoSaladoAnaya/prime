@@ -17,15 +17,7 @@ function isPrime(N) {
   return !t;
 }
 
-function getGoExplain() {
-  return document.querySelector('#goExplain');
-}
-
 function onClickCheck() {
-  const goExplain = getGoExplain();
-  goExplain.innerHTML = 'Explain it with a sieve.';
-  goExplain.disabled = false;
-
   const sieve = document.querySelector('#sieve');
   sieve.innerHTML = '';
   const verify = document.querySelector('#verify');
@@ -69,14 +61,8 @@ function onClickExplain() {
       return;
     }
   }
-
   const sieve = document.querySelector('#sieve');
   sieve.innerHTML = '';
-
-  const goExplain = getGoExplain();
-  goExplain.innerHTML = 'Generating sieve...'; //TODO: improve
-  goExplain.disabled = true;
-
   for(let i = 9; i <= number; i+=2) {
     const tree = getTree(i);
     const isPrime = tree.every(n => n == '.');
@@ -98,5 +84,4 @@ function onClickExplain() {
     });
     sieve.append(node);
   }
-  goExplain.innerHTML = 'Is ready.';
 }
