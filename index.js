@@ -26,10 +26,10 @@ function onClickCheck() {
   verify.style.display = "block";
   if(result) {
     verify.href = `https://www.wolframalpha.com/input/?i=${number}+is+prime+number`
-    verify.innerHTML = `Yes, [${number}] is a prime number, verify it.`;
+    verify.innerHTML = `Yes, ${number} is a prime number, verify it.`;
   } else {
     verify.href = `https://www.wolframalpha.com/input/?i=${number}`
-    verify.innerHTML = `[${number}] is not a prime number.`;
+    verify.innerHTML = `${number} is not a prime number.`;
   }
   input.focus();
 }
