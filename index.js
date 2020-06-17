@@ -17,11 +17,15 @@ function isPrime(N) {
   return !t;
 }
 
+function getGoExplain() {
+  return document.querySelector('#goExplain');
+}
+
 function onClickCheck() {
-  const goExplain = document.querySelector('#goExplain');
+  const goExplain = getGoExplain();
   goExplain.innerHTML = 'Explain it with a sieve.';
   goExplain.disabled = false;
-  
+
   const sieve = document.querySelector('#sieve');
   sieve.innerHTML = '';
   const verify = document.querySelector('#verify');
@@ -69,8 +73,8 @@ function onClickExplain() {
   const sieve = document.querySelector('#sieve');
   sieve.innerHTML = '';
 
-  const goExplain = document.querySelector('#goExplain');
-  goExplain.innerHTML = 'Generating sieve...';
+  const goExplain = getGoExplain();
+  goExplain.innerHTML = 'Generating sieve...'; //TODO: improve
   goExplain.disabled = true;
 
   for(let i = 9; i <= number; i+=2) {
